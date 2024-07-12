@@ -21,9 +21,7 @@ export function CreateTripPage() {
   const [ownerEmail, setOwnerEmail] = useState("")
   const [eventStartAndEndDates, setEventStartAndEndDates] = useState<DateRange | undefined>()
 
-  const [emailsToInvite, setEmailsToInvite] = useState([
-    'diego@rocketseat.com.br',
-  ])
+  const [emailsToInvite, setEmailsToInvite] = useState<string[]>([])
 
   const displayedDate = eventStartAndEndDates && eventStartAndEndDates.from && eventStartAndEndDates.to
     ? format(eventStartAndEndDates.from, "d").concat(' a ').concat(format(eventStartAndEndDates.to, "d' de 'LLLL' de 'yyyy", { locale: ptBR}))
