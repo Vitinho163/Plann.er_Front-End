@@ -7,17 +7,22 @@ import "react-day-picker/dist/style.css"
 
 interface DestinationAndDateStepProps {
   isGuestsInputOpen: boolean
+  eventStartAndEndDates: DateRange | undefined
   closeGuestsInput: () => void
   openGuestsInput: () => void
+  setDestination: (destination: string) => void
+  setEventStartAndEndDates: (dates: DateRange | undefined) => void
 }
 
 export function DestinationAndDateStep({
   closeGuestsInput,
   isGuestsInputOpen,
-  openGuestsInput
+  openGuestsInput,
+  setDestination,
+  setEventStartAndEndDates,
+  eventStartAndEndDates
 }: DestinationAndDateStepProps) {
   const [isDatePickerOpen, serIsDatePickerOpen] = useState(false)
-  const [eventStartAndEndDates, setEventStartAndEndDates] = useState<DateRange | undefined>()
 
   function openDatePicker() {
     serIsDatePickerOpen(true)
@@ -35,7 +40,13 @@ export function DestinationAndDateStep({
     <div className="h-16 bg-zinc-900 px-4 rounded-xl flex items-center shadow-shape gap-3">
       <div className='flex items-center gap-2 flex-1'>
         <MapPin className='size-5 text-zinc-400' />
-        <input disabled={isGuestsInputOpen} type="text" placeholder="Para onde você vai?" className="bg-transparent text-lg placeholder-zinc-400 outline-none flex-1" />
+        <input 
+          disabled={isGuestsInputOpen} 
+          type="text" 
+          placeholder="Para onde você vai?" 
+          className="bg-transparent text-lg placeholder-zinc-400 outline-none flex-1" 
+          onChange={(event) => setDestination(event.target.value)}
+        />
       </div>
 
       <button onClick={openDatePicker} disabled={isGuestsInputOpen} className='flex items-center gap-2 text-left w-[280px]'>
@@ -57,7 +68,7 @@ export function DestinationAndDateStep({
               </div>
             </div>
 
-            <DayPicker mode="range" selected={eventStartAndEndDates} onSelect={setEventStartAndEndDates} />
+            <DayPicker mode="range" selected={eventStartAndEndDates} onSelect={setEventStartAndEndDates} disabled={{ before: new Date() }} />
           </div>
         </div>
       )}
