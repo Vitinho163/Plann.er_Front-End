@@ -6,6 +6,8 @@ import { DestinationAndDateStep } from './steps/destination-and-date-step'
 import { InviteGuestsStep } from './steps/invite-guests-step'
 import { DateRange } from 'react-day-picker'
 import { api } from '../../lib/axios'
+import { format } from 'date-fns'
+import { ptBR } from 'date-fns/locale'
 
 export function CreateTripPage() {
   const navigate = useNavigate()
@@ -22,6 +24,10 @@ export function CreateTripPage() {
   const [emailsToInvite, setEmailsToInvite] = useState([
     'diego@rocketseat.com.br',
   ])
+
+  const displayedDate = eventStartAndEndDates && eventStartAndEndDates.from && eventStartAndEndDates.to
+    ? format(eventStartAndEndDates.from, "d").concat(' a ').concat(format(eventStartAndEndDates.to, "d' de 'LLLL' de 'yyyy", { locale: ptBR}))
+    : null
 
   function openGuestsInput() {
     setIsGuestsInputOpen(true)
@@ -160,6 +166,8 @@ export function CreateTripPage() {
 
       {isConfirmTripModalOpen && (
         <ConfirmTripModal 
+          date={displayedDate}
+          destination={destination}
           closeConfirmTripModal={closeConfirmTripModal}
           createTrip={createTrip}
           setOwnerName={setOwnerName}

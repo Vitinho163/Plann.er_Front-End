@@ -43,7 +43,7 @@ export function ImportantLinks() {
                   {link.url}
                 </a>
               </div>
-              <Link2 className="text-zinc-400 size-5 shrink-0" />
+              <Link2 onClick={() => navigator.clipboard.writeText(link.url)} className="text-zinc-400 size-5 shrink-0 cursor-pointer" />
             </div>
           )
         })}

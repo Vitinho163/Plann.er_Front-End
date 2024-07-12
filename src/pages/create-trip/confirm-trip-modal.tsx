@@ -7,9 +7,13 @@ interface ConfirmTripModalProps {
   createTrip: (event: FormEvent<HTMLFormElement>) => void
   setOwnerName: (name: string) => void 
   setOwnerEmail: (email: string) => void
+  destination: string,
+  date: string | null,
 }
 
 export function ConfirmTripModal({
+  destination,
+  date,
   closeConfirmTripModal,
   createTrip,
   setOwnerName,
@@ -26,7 +30,7 @@ export function ConfirmTripModal({
             </button>
           </div>
           <p className='text-sm text-zinc-400'>
-            Para concluir a criação da viagem para <span className='font-semibold text-zinc-100 '>Florianópolis, Brasil</span> nas datas de <span className='font-semibold text-zinc-100 '>16 a 27 de Agosto de 2024</span> preencha seus dados abaixo:
+            Para concluir a criação da viagem para <span className='font-semibold text-zinc-100 '>{destination}</span> nas datas de <span className='font-semibold text-zinc-100 '>{date}</span> preencha seus dados abaixo:
           </p>
         </div>
 
