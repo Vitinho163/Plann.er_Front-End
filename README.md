@@ -23,7 +23,6 @@ Plann.er - Front-End is a travel planner application built using modern web tech
 
 - **[Axios](https://axios-http.com/)**: Promise-based HTTP client for the browser and Node.js.
 - **[date-fns](https://date-fns.org/)**: Modern JavaScript date utility library.
-- **[localforage](https://localforage.github.io/localForage/)**: Offline storage, improved.
 - **[lucide-react](https://lucide.dev/docs/lucide-react)**: Beautiful & consistent icon toolkit made by the community.
 - **[match-sorter](https://github.com/kentcdodds/match-sorter)**: Simple utility for fuzzy filtering.
 - **[React](https://reactjs.org/)**: JavaScript library for building user interfaces.
@@ -94,7 +93,6 @@ Plann.er - Front-End é uma aplicação de planejamento de viagens construída u
 
 - **[Axios](https://axios-http.com/)**: Cliente HTTP baseado em Promises para o navegador e Node.js.
 - **[date-fns](https://date-fns.org/)**: Biblioteca moderna de utilitários de datas em JavaScript.
-- **[localforage](https://localforage.github.io/localForage/)**: Armazenamento offline melhorado.
 - **[lucide-react](https://lucide.dev/docs/lucide-react)**: Conjunto de ícones bonito e consistente feito pela comunidade.
 - **[match-sorter](https://github.com/kentcdodds/match-sorter)**: Utilitário simples para filtro aproximado.
 - **[React](https://reactjs.org/)**: Biblioteca JavaScript para construção de interfaces de usuário.
