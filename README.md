@@ -37,7 +37,7 @@ Plann.er - Front-End is a travel planner application built using modern web tech
 
 ## 📁 Structure of the project <a name = "project_structure_en"></a>
 The project structure is as follows:
-
+```
 ├── src: directory containing application source files
 
 │   ├── components: directory containing global conponents.
@@ -47,7 +47,7 @@ The project structure is as follows:
 │   ├── pages: directory containing application pages.
 
 │   └── app.tsx: main application file.
-
+```
 
 ## 🛠️ Installation <a name = "installation-en"></a>
 
@@ -70,21 +70,6 @@ http://localhost:5173
 ```
 
 > Note: This application was developed using Node.js version v20.15. If you encounter issues, try updating Node.js to the latest version.
-
-
-<div align="center" name="author-en">
-  <h4>Created with ❤️ by <a href="https://github.com/Vitinho163">João Victor</a></h4>
-</div>
-
----
-
-The documentation for all routes is available at:
-http://localhost:{port}/api-docs/
-
-
-Make sure to replace {port} with the port defined in the .env file. If not defined, try accessing it with the default port 3333.
-
->Note: This application was developed using Node.js version v18.15. In case of issues, try updating Node.js to the latest version.
 
 <div align="center" name="author-en">
   <h4>Created with ❤️ by <a href="https://github.com/Vitinho163">João Victor</a></h4>
@@ -123,6 +108,7 @@ Plann.er - Front-End é uma aplicação de planejamento de viagens construída u
 
 ## 📁 Estrutura do Projeto <a name = "estrutura-do-projeto-pt"></a>
 A estrutura do projeto é a seguinte:
+```
 ├── src: directory containing application source files
 
 │   ├── components: directory containing global conponents.
@@ -132,7 +118,7 @@ A estrutura do projeto é a seguinte:
 │   ├── pages: directory containing application pages.
 
 │   └── app.tsx: main application file.
-
+```
 
 ## 🛠️ Instalação <a name = "instalacao-pt"></a>
 
