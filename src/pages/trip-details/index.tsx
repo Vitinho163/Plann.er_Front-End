@@ -6,6 +6,7 @@ import { Guests } from "./guests";
 import { Activities } from "./activities";
 import { DestinationAndDateHeader } from "./destination-and-date-header";
 import { Button } from "../../components/button";
+import { Footer } from "../../components/footer";
 
 export function TripDetailsPage() {
   const [isCreateActivityModalOpen, setIsCreateActivityModalOpen] = useState(false)
@@ -41,6 +42,8 @@ export function TripDetailsPage() {
           <Guests />
         </div>
       </main>
+
+      <Footer />
 
       {isCreateActivityModalOpen && (
         <CreateActivityModal 

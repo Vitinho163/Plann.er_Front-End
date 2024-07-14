@@ -10,6 +10,7 @@ import { api } from "../../lib/axios";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import { useNavigate } from 'react-router-dom'
+import { Footer } from "../../components/footer";
 
 interface Trip {
   id: string
@@ -117,6 +118,8 @@ export function ConfirmParticipant() {
           </form>
         </div>
       </div>
+
+      <Footer />
     </div>
   )
 }
