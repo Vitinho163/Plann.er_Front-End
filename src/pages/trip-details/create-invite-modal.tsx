@@ -1,6 +1,6 @@
 import { AtSign, X } from "lucide-react"
 import { Button } from "../../components/button"
-import { FormEvent } from "react"
+import { FormEvent, useState } from "react"
 import { api } from "../../lib/axios"
 import { useParams } from "react-router-dom"
 
@@ -12,6 +12,7 @@ export function CreateInviteModal({
   closeCreateInviteModal
 }: CreateInviteModalProps) {
   const { tripId } = useParams()
+  const [isCreatingInvite, setIsCreatingInvite] = useState(false)
 
   async function createInvite(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -23,6 +24,8 @@ export function CreateInviteModal({
     if (!email) {
       return
     }
+
+    setIsCreatingInvite(true)
 
     await api.post(`/trips/${tripId}/invites`, {
       email,
@@ -57,8 +60,8 @@ export function CreateInviteModal({
             />
           </div>
 
-          <Button type="submit" variant="primary" size="full">
-            Convidar parceiro(a)
+          <Button disabled={isCreatingInvite} type="submit" variant="primary" size="full">
+            {isCreatingInvite ? ('Enviando convite...') : ('Convidar parceiro(a)')}
           </Button>
         </form>
       </div>

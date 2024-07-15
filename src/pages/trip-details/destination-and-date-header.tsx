@@ -22,6 +22,7 @@ export function DestinationAndDateHeader() {
   const [destination, setDestination] = useState('')
   const [isDatePickerOpen, setIsDatePickerOpen] = useState(false)
   const [eventStartAndEndDates, setEventStartAndEndDates] = useState<DateRange | undefined>()
+  const [isUpdatingTrip, setIsUpdatingTrip] = useState(false)
 
   function openDestinationAndDateModal() {
     setIsDestinationAndDateModalOpen(true)
@@ -48,6 +49,8 @@ export function DestinationAndDateHeader() {
     if(!eventStartAndEndDates) {
       return
     }
+
+    setIsUpdatingTrip(true)
 
     await api.put(`/trips/${tripId}`, {
       destination,
@@ -126,8 +129,8 @@ export function DestinationAndDateHeader() {
                 </button>
               </div>
 
-              <Button onClick={updateTrip} variant="primary" size="full">
-                Confirmar
+              <Button onClick={updateTrip} disabled={isUpdatingTrip} variant="primary" size="full">
+                {isUpdatingTrip ? ('Atualizando...') : ('Confirmar')}
               </Button>
 
           </div>

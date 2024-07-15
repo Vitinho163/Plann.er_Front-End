@@ -1,6 +1,6 @@
 import { Calendar, Tag, X } from "lucide-react"
 import { Button } from "../../components/button"
-import { FormEvent } from "react"
+import { FormEvent, useState } from "react"
 import { api } from "../../lib/axios"
 import { useParams } from "react-router-dom"
 
@@ -12,9 +12,11 @@ export function CreateActivityModal({
   closeCreateActivityModal
 }: CreateActivityModalProps) {
   const { tripId } = useParams()
+  const [isCreatingActivity, setIsCreatingActivity] = useState(false)
 
   async function createActivity(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    setIsCreatingActivity(true)
 
     const data = new FormData(event.currentTarget)
 
@@ -66,8 +68,8 @@ export function CreateActivityModal({
             </div>
           </div>
 
-          <Button variant="primary" size="full">
-            Salvar atividade
+          <Button disabled={isCreatingActivity} variant="primary" size="full">
+            {isCreatingActivity ? ('Criando atividade...') : ('Salvar atividade')}
           </Button>
         </form>
       </div>
