@@ -29,7 +29,9 @@ export function CreateTripPage() {
     : null
 
   function openGuestsInput() {
-    setIsGuestsInputOpen(true)
+    if (destination && eventStartAndEndDates && eventStartAndEndDates.to && eventStartAndEndDates.from) {
+      setIsGuestsInputOpen(true)
+    }
   }
 
   function closeGuestsInput() {
